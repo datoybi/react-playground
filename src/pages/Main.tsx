@@ -1,16 +1,27 @@
-import { styled } from 'styled-components';
+import './Main.scss';
+import { useNavigate } from 'react-router-dom';
 
 export default function Main() {
-  return <Wrapper>메인</Wrapper>;
+  const navigate = useNavigate();
+  // TODO: json으로 빼기
+  return (
+    <div className="main">
+      <h1>React Playground!</h1>
+      <ul>
+        <li onClick={() => navigate('/checkbox')}>
+          Checkbox (전체 선택, 각각 선택)
+        </li>
+        {/* <li>Bread</li>
+        <li>Milk</li>
+        <li>Apples</li>
+        <li>Grapefruit</li>
+        <li>Cat food</li>
+        <li>Cheese</li>
+        <li>낙서서</li>
+        <li>Wine</li>
+        <li>Wine</li>
+        <li>Wine</li> */}
+      </ul>
+    </div>
+  );
 }
-
-const Wrapper = styled.div`
-  border: 1px solid;
-  width: 90%;
-  max-width: 600px;
-  min-width: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;

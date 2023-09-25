@@ -1,11 +1,10 @@
-import GlobalStyle from './GlobalStyle';
 import { PageLayout } from './pages/PageLayout';
 import { Routes } from './Routes';
+import './App.scss';
 
 function App() {
   return (
     <>
-      <GlobalStyle />
       <PageLayout>
         <Routes />
       </PageLayout>
