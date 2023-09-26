@@ -90,11 +90,7 @@ const List = () => {
 };
 
 const Checkbox = () => {
-  return (
-    <>
-      <List />
-    </>
-  );
+  return <List />;
 };
 
 export default Checkbox;
