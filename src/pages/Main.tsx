@@ -8,9 +8,10 @@ export default function Main() {
     <div className="main">
       <h1>React Playground!</h1>
       <ul>
-        <li onClick={() => navigate('/checkbox')}>
-          Checkbox (전체 선택, 각각 선택)
+        <li onClick={() => navigate('/checkbox-basic')}>
+          Checkbox basic(전체 선택, 각각 선택)
         </li>
+        <li onClick={() => navigate('/checkbox-hook')}>Checkbox 커스텀 훅</li>
         {/* <li>Bread</li>
         <li>Milk</li>
         <li>Apples</li>
