@@ -12,16 +12,7 @@ export default function Main() {
           Checkbox basic(전체 선택, 각각 선택)
         </li>
         <li onClick={() => navigate('/checkbox-hook')}>Checkbox 커스텀 훅</li>
-        {/* <li>Bread</li>
-        <li>Milk</li>
-        <li>Apples</li>
-        <li>Grapefruit</li>
-        <li>Cat food</li>
-        <li>Cheese</li>
-        <li>낙서서</li>
-        <li>Wine</li>
-        <li>Wine</li>
-        <li>Wine</li> */}
+        <li onClick={() => navigate('/tree-simple')}>tree 그리기 (재귀)</li>
       </ul>
     </div>
   );

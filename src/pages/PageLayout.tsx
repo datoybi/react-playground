@@ -1,11 +1,15 @@
 import { ReactNode } from 'react';
 import { styled } from 'styled-components';
+import Header from '../components/Common/Header';
 
 export function PageLayout({ children }: { children: ReactNode }) {
   return (
-    <Wrapper>
-      <>{children}</>
-    </Wrapper>
+    <>
+      <Header />
+      <Wrapper>
+        <>{children}</>
+      </Wrapper>
+    </>
   );
 }
 

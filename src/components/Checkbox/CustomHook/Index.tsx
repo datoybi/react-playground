@@ -10,6 +10,7 @@ const Index = () => {
 
   return (
     <>
+      <h1 className="title">Checkbox 커스텀 훅</h1>
       {renderChecks()}
       <p>
         <button disabled={!isAllChecked}>다음</button>

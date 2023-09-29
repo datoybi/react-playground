@@ -4,7 +4,12 @@
 import List from './List';
 
 const Index = () => {
-  return <List />;
+  return (
+    <>
+      <h1 className="title">Checkbox basic(전체 선택, 각각 선택)</h1>
+      <List />
+    </>
+  );
 };
 
 export default Index;
