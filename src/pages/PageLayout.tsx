@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { styled } from 'styled-components';
-import Header from '../components/common/Header';
+import { Header } from 'components/common';
 
 export function PageLayout({ children }: { children: ReactNode }) {
   return (

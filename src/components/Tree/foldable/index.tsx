@@ -7,7 +7,7 @@
 	[x] datas에 id, parentId 추가하기
 	[x] dataset을 이용하여 li에 명시
 	[x] 클릭한 li의 id를 openItems에 추가
-	[] openItems에 추가된 id의 children 보이기
+	[x] openItems에 추가된 id의 children 보이기
 
 	---
 	폴딩을 하기 위해서 ref안에 해당 id의 자식들의 id를 넣어서
@@ -74,6 +74,10 @@ const Index = () => {
 export default Index;
 
 const Wrapper = styled.div`
+  div {
+    width: 500px;
+    height: 500px;
+  }
   ul {
     list-style: initial;
     padding-left: 40px;
