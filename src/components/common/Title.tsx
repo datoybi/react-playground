@@ -8,6 +8,7 @@ const Title = ({ children }: PropsWithChildren) => {
 export default Title;
 
 const Wrapper = styled.h1`
+  margin-top: 100px;
   font-family: 'Nanum Pen Script';
   font-size: 2rem;
   margin-bottom: 30px;

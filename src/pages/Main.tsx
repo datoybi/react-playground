@@ -15,6 +15,7 @@ export default function Main() {
         <li onClick={() => navigate('/checkbox-hook')}>{title.checkboxHook}</li>
         <li onClick={() => navigate('/tree-simple')}>{title.treeSimple}</li>
         <li onClick={() => navigate('/tree-foldable')}>{title.treeFoldable}</li>
+        <li onClick={() => navigate('/pagination')}>{title.pagination}</li>
       </ul>
     </div>
   );
