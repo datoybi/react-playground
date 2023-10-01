@@ -7,7 +7,7 @@ const Container = ({ children }: PropsWithChildren) => {
 
 export default Container;
 
-const Wrapper = styled.h1`
+const Wrapper = styled.div`
   background: white;
   box-shadow: 0.25rem 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
   padding: 50px;

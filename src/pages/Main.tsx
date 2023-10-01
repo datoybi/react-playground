@@ -1,5 +1,6 @@
 import './Main.scss';
 import { useNavigate } from 'react-router-dom';
+import { title } from 'constants/title';
 
 export default function Main() {
   const navigate = useNavigate();
@@ -9,11 +10,11 @@ export default function Main() {
       <h1>React Playground!</h1>
       <ul>
         <li onClick={() => navigate('/checkbox-basic')}>
-          Checkbox basic(전체 선택, 각각 선택)
+          {title.checkboxBasic}
         </li>
-        <li onClick={() => navigate('/checkbox-hook')}>Checkbox 커스텀 훅</li>
-        <li onClick={() => navigate('/tree-simple')}>tree그리기 기초</li>
-        <li onClick={() => navigate('/tree-clickable')}>접히는 tree 그리기</li>
+        <li onClick={() => navigate('/checkbox-hook')}>{title.checkboxHook}</li>
+        <li onClick={() => navigate('/tree-simple')}>{title.treeSimple}</li>
+        <li onClick={() => navigate('/tree-foldable')}>{title.treeFoldable}</li>
       </ul>
     </div>
   );

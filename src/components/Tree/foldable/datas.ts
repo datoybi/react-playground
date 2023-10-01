@@ -53,7 +53,7 @@ export const datas = [
             children: [],
           },
           {
-            parentId: '1',
+            parentId: '6',
             id: '10',
             name: '포도',
             children: [
@@ -72,13 +72,13 @@ export const datas = [
   },
   {
     parentId: 'root',
-    id: '12',
+    id: '13',
     name: '동물',
     children: [
-      { parentId: '12', id: '13', name: '애완동물', children: [] },
+      { parentId: '13', id: '14', name: '애완동물', children: [] },
       {
-        parentId: '12',
-        id: '14',
+        parentId: '13',
+        id: '15',
         name: '야생동물',
         children: [],
       },
@@ -86,7 +86,7 @@ export const datas = [
   },
   {
     parentId: 'root',
-    id: '15',
+    id: '16',
     name: '사람',
     children: [],
   },

@@ -4,6 +4,8 @@
 
 import useChecks from './useChecks';
 import { Title, Container } from 'components/common';
+import { title } from 'constants/title';
+
 const labels = ['check 1', 'check 2', 'check 3', 'check 4', 'check 5'];
 
 const Index = () => {
@@ -11,7 +13,7 @@ const Index = () => {
 
   return (
     <>
-      <Title>Checkbox 커스텀 훅</Title>
+      <Title>{title.checkboxHook}</Title>
       <Container>
         {renderChecks()}
         <p>

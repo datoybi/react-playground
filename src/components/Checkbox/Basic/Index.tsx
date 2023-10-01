@@ -4,11 +4,12 @@
 
 import List from './List';
 import { Title, Container } from 'components/common';
+import { title } from 'constants/title';
 
 const Index = () => {
   return (
     <>
-      <Title>Checkbox basic(전체 선택, 각각 선택)</Title>
+      <Title>{title.checkboxBasic})</Title>
       <Container>
         <List />
       </Container>
