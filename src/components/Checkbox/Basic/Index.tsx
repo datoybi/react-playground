@@ -3,12 +3,15 @@
  */
 
 import List from './List';
+import { Title, Container } from 'components/common';
 
 const Index = () => {
   return (
     <>
-      <h1 className="title">Checkbox basic(전체 선택, 각각 선택)</h1>
-      <List />
+      <Title>Checkbox basic(전체 선택, 각각 선택)</Title>
+      <Container>
+        <List />
+      </Container>
     </>
   );
 };

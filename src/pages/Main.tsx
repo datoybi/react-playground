@@ -12,7 +12,8 @@ export default function Main() {
           Checkbox basic(전체 선택, 각각 선택)
         </li>
         <li onClick={() => navigate('/checkbox-hook')}>Checkbox 커스텀 훅</li>
-        <li onClick={() => navigate('/tree-simple')}>tree 그리기 (재귀)</li>
+        <li onClick={() => navigate('/tree-simple')}>tree그리기 기초</li>
+        <li onClick={() => navigate('/tree-clickable')}>접히는 tree 그리기</li>
       </ul>
     </div>
   );

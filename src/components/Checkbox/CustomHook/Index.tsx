@@ -3,6 +3,7 @@
  */
 
 import useChecks from './useChecks';
+import { Title, Container } from 'components/common';
 const labels = ['check 1', 'check 2', 'check 3', 'check 4', 'check 5'];
 
 const Index = () => {
@@ -10,11 +11,13 @@ const Index = () => {
 
   return (
     <>
-      <h1 className="title">Checkbox 커스텀 훅</h1>
-      {renderChecks()}
-      <p>
-        <button disabled={!isAllChecked}>다음</button>
-      </p>
+      <Title>Checkbox 커스텀 훅</Title>
+      <Container>
+        {renderChecks()}
+        <p>
+          <button disabled={!isAllChecked}>다음</button>
+        </p>
+      </Container>
     </>
   );
 };

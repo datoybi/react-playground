@@ -15,6 +15,7 @@
 import { styled } from 'styled-components';
 import { datas } from './datas';
 import List from './List';
+import { Title, Container } from 'components/common';
 
 export type Prop = {
   name: string;
@@ -24,8 +25,10 @@ export type Prop = {
 const Index = () => {
   return (
     <Wrapper>
-      <h1 className="title">tree 그리기 (재귀)</h1>
-      <List datas={datas} />
+      <Title>tree 그리기 기초</Title>
+      <Container>
+        <List datas={datas} />
+      </Container>
     </Wrapper>
   );
 };
