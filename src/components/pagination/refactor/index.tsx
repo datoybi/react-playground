@@ -36,7 +36,7 @@ const Index = () => {
   }, []);
 
   // console.log(posts);
-  console.log(page);
+  // console.log(page);
 
   return (
     <>
