@@ -3,7 +3,6 @@ import { Container, Title } from 'components/common';
 import { title } from 'constants/title';
 import { styled } from 'styled-components';
 import axios, { AxiosResponse } from 'axios';
-import Pagination from './Pagination';
 
 const URL = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -17,27 +16,29 @@ export type Post = {
 const Index = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [page, setPage] = useState<number>(1); // 현재 페이지 수
-  const total = 100; // 총 게시물 수
-  const limit = 5; // 페이지당 보여줄 게시물 수 pagePerSize
-  const offset = (page - 1) * limit; // 보여줄 첫번째 게시물
+  const totalPost = 100; // 총 게시물 수
+  const pageSize = 5; // 페이지당 보여줄 게시물 수 pagePerSize
+  const btnSize = 6; // 보여질 페이지 버튼의 개수
 
-  const pageBtnSize = 5; // 보여질 페이지 버튼의 개수;
-  const currentSet = Math.ceil(page / pageBtnSize); // 현재 버튼 세트 번호
-  const startPage = (currentSet - 1) * pageBtnSize + 1; // 시작 페이지 번호
-  const endPage = startPage + pageBtnSize - 1; // 끝 페이지 번호
-  const totalPage = Math.ceil(total / limit);
-  const totalSet = Math.ceil(totalPage / pageBtnSize); // 전체 세트 수
+  const currentSet = Math.ceil(page / btnSize); // 현재 버튼 세트 번호
+  // 페이지 번호
+  const startPage = (currentSet - 1) * btnSize + 1; // 시작 페이지 번호
+  const endPage = startPage + btnSize - 1; // 끝 페이지 번호
+  const totalPage = Math.ceil(totalPost / pageSize); // 총 페이지
 
-  const startPost = (page - 1) * limit + 1; // 시작 게시글 번호
-  const endPost = startPost + limit - 1; // 끝 게시글 번호
+  const totalSet = Math.ceil(totalPage / btnSize); // 전체 세트 수
 
-  console.log('page', page);
-  console.log('currentSet', currentSet);
-  console.log('startPage', startPage);
-  console.log('endPage', endPage);
-  console.log('startPost', startPost);
-  console.log('endPost', endPost);
-  console.log('totalSet', totalSet);
+  // 게시물
+  const startPost = (page - 1) * pageSize + 1; // 시작 게시물 번호
+  const endPost = startPost + pageSize - 1; // 끝 게시물 번호
+
+  // console.log('page', page);
+  // console.log('currentSet', currentSet);
+  // console.log('startPage', startPage);
+  // console.log('endPage', endPage);
+  // console.log('startPost', startPost);
+  // console.log('endPost', endPost);
+  // console.log('totalSet', totalSet);
 
   useEffect(() => {
     axios
@@ -46,14 +47,11 @@ const Index = () => {
       .catch(error => console.error(error));
   }, []);
 
-  // console.log(posts);
-  console.log(page);
-
   return (
     <>
-      <Title>{title.pagination}</Title>
+      <Title>{title.paginationBasic}</Title>
       <Container>
-        {posts.slice(offset, offset + limit).map(post => (
+        {posts.slice(startPost - 1, endPost).map(post => (
           <Section key={post.id}>
             <h3>
               {post.id}. {post.title}
@@ -68,7 +66,7 @@ const Index = () => {
               &lt;
             </Button>
           )}
-          {Array(limit)
+          {Array(btnSize)
             .fill(startPage)
             .map((_, i) => {
               if (startPage + i > totalPage) {
@@ -85,20 +83,12 @@ const Index = () => {
                 </Button>
               );
             })}
-          {currentSet < totalSet && (
+          {totalSet > currentSet && (
             <Button onClick={() => setPage(endPage + 1)} $active={false}>
               &gt;
             </Button>
           )}
         </Nav>
-        {/* <Pagination
-          total={total}
-          limit={limit}
-          page={page}
-          setPage={setPage}
-          startPage={startPage}
-          endPage={endPage}
-        /> */}
       </Container>
     </>
   );

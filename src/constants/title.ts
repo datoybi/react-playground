@@ -3,5 +3,6 @@ export const title = {
   checkboxHook: 'Checkbox 커스텀 훅',
   treeSimple: 'tree 기초',
   treeFoldable: '접히는 tree',
-  pagination: '게시판 페이지네이션',
+  paginationBasic: '게시판 pagination 기초',
+  paginationRefactor: '게시판 pagination refactoring',
 };
