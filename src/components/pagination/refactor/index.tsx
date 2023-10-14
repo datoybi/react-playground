@@ -4,7 +4,6 @@ import { title } from 'constants/title';
 import { styled } from 'styled-components';
 import axios, { AxiosResponse } from 'axios';
 import Pagination from './Pagination';
-import { getPagination } from './util';
 
 const URL = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -19,14 +18,11 @@ const Index = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const [page, setPage] = useState<number>(1); // 현재 페이지 수
   const totalPost = 100; // 총 게시물 수
-  const pageSize = 5; // 페이지당 보여줄 게시물 수
-  const btnSize = 5; // 보여질 페이지 버튼의 개수
-  const { startPost, endPost } = getPagination({
-    totalPost,
-    pageSize,
-    btnSize,
-    page,
-  });
+  const pageRange = 5; // 페이지당 보여줄 게시물 수
+  const btnRange = 5; // 보여질 페이지 버튼의 개수
+
+  const startPost = (page - 1) * pageRange + 1; // 시작 게시물 번호
+  const endPost = startPost + pageRange - 1; // 끝 게시물 번호
 
   useEffect(() => {
     axios
@@ -34,9 +30,6 @@ const Index = () => {
       .then((res: AxiosResponse<Post[]>) => setPosts(res.data))
       .catch(error => console.error(error));
   }, []);
-
-  // console.log(posts);
-  // console.log(page);
 
   return (
     <>
@@ -54,8 +47,8 @@ const Index = () => {
           page={page}
           setPage={setPage}
           totalPost={totalPost}
-          btnSize={btnSize}
-          pageSize={pageSize}
+          btnRange={btnRange}
+          pageRange={pageRange}
         />
       </Container>
     </>
