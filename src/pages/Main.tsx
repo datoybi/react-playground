@@ -21,6 +21,9 @@ export default function Main() {
         <li onClick={() => navigate('/pagination-refactor')}>
           {title.paginationRefactor}
         </li>
+        <li onClick={() => navigate('/responsive-list')}>
+          {title.responsiveList}
+        </li>
       </ul>
     </div>
   );
