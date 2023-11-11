@@ -4,6 +4,7 @@ import { title } from 'constants/title';
 import { styled } from 'styled-components';
 import axios, { AxiosResponse } from 'axios';
 import Pagination from './Pagination';
+import usePagination from './usePagination';
 
 const URL = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -14,15 +15,17 @@ export type Post = {
   body: string;
 };
 
+const PAGINATION = {
+  pageRange: 5,
+  btnRange: 5,
+};
+
 const Index = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [page, setPage] = useState<number>(1); // 현재 페이지 수
-  const totalPost = 100; // 총 게시물 수
-  const pageRange = 5; // 페이지당 보여줄 게시물 수
-  const btnRange = 5; // 보여질 페이지 버튼의 개수
-
-  const startPost = (page - 1) * pageRange + 1; // 시작 게시물 번호
-  const endPost = startPost + pageRange - 1; // 끝 게시물 번호
+  const { page, currentList, setPage, totalPost } = usePagination({
+    pageRange: PAGINATION.pageRange,
+    list: posts,
+  });
 
   useEffect(() => {
     axios
@@ -35,7 +38,7 @@ const Index = () => {
     <>
       <Title>{title.paginationRefactor}</Title>
       <Container>
-        {posts.slice(startPost - 1, endPost).map(post => (
+        {currentList.map((post: Post) => (
           <Section key={post.id}>
             <h3>
               {post.id}. {post.title}
@@ -47,8 +50,8 @@ const Index = () => {
           page={page}
           setPage={setPage}
           totalPost={totalPost}
-          btnRange={btnRange}
-          pageRange={pageRange}
+          btnRange={PAGINATION.btnRange}
+          pageRange={PAGINATION.pageRange}
         />
       </Container>
     </>
