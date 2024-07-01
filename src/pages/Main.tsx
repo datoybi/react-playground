@@ -21,8 +21,11 @@ export default function Main() {
         <li onClick={() => navigate('/pagination-refactor')}>
           {title.paginationRefactor}
         </li>
-        <li onClick={() => navigate('/responsive-list')}>
-          {title.responsiveList}
+        <li onClick={() => navigate('/responsive-list/static')}>
+          {title.responsiveStaticList}
+        </li>
+        <li onClick={() => navigate('/responsive-list/dynamic')}>
+          {title.responsiveDynamicList}
         </li>
       </ul>
     </div>

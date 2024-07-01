@@ -5,5 +5,6 @@ export const title = {
   treeFoldable: '접히는 tree',
   paginationBasic: '게시판 pagination 기초',
   paginationRefactor: '게시판 pagination refactoring',
-  responsiveList: '반응형 리스트 스타일링',
+  responsiveStaticList: '반응형 리스트 스타일링 (컨텐츠 고정 사이즈)',
+  responsiveDynamicList: '반응형 리스트 스타일링 (컨텐츠 가변 사이즈)',
 };

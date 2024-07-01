@@ -7,7 +7,8 @@ import SimpleTree from 'components/tree/simple';
 import ClickableTree from 'components/tree/foldable';
 import PaginationBasic from 'components/pagination/basic';
 import PaginationRefactor from 'components/pagination/refactor';
-import ResponsiveList from 'components/responsiveList';
+import ResponsiveStaticList from 'components/responsiveList/static';
+import ResponsiveDynamicList from 'components/responsiveList/dynamic';
 
 export const Routes = () => {
   return (
@@ -19,7 +20,14 @@ export const Routes = () => {
       <Route path="/tree-foldable" element={<ClickableTree />} />
       <Route path="/pagination-basic" element={<PaginationBasic />} />
       <Route path="/pagination-refactor" element={<PaginationRefactor />} />
-      <Route path="/responsive-list" element={<ResponsiveList />} />
+      <Route
+        path="/responsive-list/static"
+        element={<ResponsiveStaticList />}
+      />
+      <Route
+        path="/responsive-list/dynamic"
+        element={<ResponsiveDynamicList />}
+      />
       <Route path="*" element={<NotFoundPage />} />
     </ReactRouterRoutes>
   );

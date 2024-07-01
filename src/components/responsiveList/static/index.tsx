@@ -2,12 +2,12 @@ import { styled } from 'styled-components';
 import { title } from 'constants/title';
 import { Container, Title } from 'components/common';
 
-const ResponsiveList = () => {
+const StaticResponsiveList = () => {
   const elements = Array(20).fill(<Item />);
 
   return (
     <>
-      <Title>{title.responsiveList}</Title>
+      <Title>{title.responsiveStaticList}</Title>
       <Container>
         <List>{elements}</List>
       </Container>
@@ -15,7 +15,7 @@ const ResponsiveList = () => {
   );
 };
 
-export default ResponsiveList;
+export default StaticResponsiveList;
 
 const Item = styled.div`
   border: 1px solid black;
